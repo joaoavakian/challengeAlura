@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("assets/depositphotos_202821804-stock-photo-abstract-white-modern-background-of.jpg")
+    no-repeat center center fixed;
+  background-size: cover;
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 100px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 15px 45px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ImagemPrincipal {
+  margin-right: 20px;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+  max-width: 150px;
+}
+
+.container h1 {
+  color: rgb(9, 71, 24);
+  font-size: 40px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px 0;
+}
+
+.container2,
+.container3 {
+  width: 48%;
+  color: rgb(12, 73, 27);
+}
+
+.areaEncriptografar,
+.areaDescriptografar {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(15, 15, 15, 0.1);
+}
+
+.areaEncriptografar textarea,
+.areaDescriptografar textarea {
+  width: 100%;
+  max-width: 100%;
+  height: 200px;
+  background-color: #82eb80;
+  font-size: 18px;
+  border: none;
+  color: rgb(27, 109, 46);
+  resize: none;
+  padding: 10px;
+}
+
+.mensagemAviso,
+.botoesEncDesc {
+  margin-top: 10px;
+}
+
+.mensagemAviso img {
+  width: 20px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.mensagemAviso strong {
+  font-size: 15px;
+}
+
+.botoesEncDesc button,
+.botaoCopiar button {
+  border-radius: 15px;
+  width: 100%;
+  max-width: 250px;
+  height: 50px;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: background 1s;
+}
+
+.botao1 {
+  background-color: #1c751a;
+  border: none;
+  color: rgb(194, 192, 192);
+}
+
+.botao1:hover {
+  color: #135012;
+  background-color: rgb(152, 161, 156);
+}
+
+.botao2 {
+  color: #196417;
+  background-color: white;
+  border: none;
+}
+
+.botao2:hover {
+  color: #175e16;
+  background-color: rgb(153, 161, 157);
+}
+
+.botaoCopiar {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.botaoCop {
+  background-color: #146313;
+  border: none;
+  color: white;
+}
+
+.botaoCop:hover {
+  color: #165f14;
+  background-color: rgb(169, 180, 174);
+}
+
+footer {
+  background-color: #10420f;
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+  font-weight: bold;
+  position: fixed;
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .container img {
+    margin-bottom: 20px;
+  }
+
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container2,
+  .container3 {
+    width: 90%; /* Adjust width for smaller screens */
+    max-width: 100%; /* Ensure full width on smaller screens */
+    margin: 10px 0;
+  }
+}

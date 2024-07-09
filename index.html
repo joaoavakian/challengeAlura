@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Decodificador e Codificador de Texto</title>
+    <link rel="shortcut icon" href="assets/Logo.png" type="image/x-icon" />
+    <link href="styles.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="container">
+      <figure class="ImagemPrincipal">
+        <img src="assets/Logo.png" alt="Logo" />
+      </figure>
+      <h1>Mensagens codificadas</h1>
+    </header>
+
+    <section class="main-content">
+      <div class="container2">
+        <div class="areaDescriptografar">
+          <label for="textoDescriptar" class="visualmente-oculto"
+            >Texto descriptografado</label
+          >
+          <textarea
+            id="textoDescriptar"
+            placeholder="..."
+            cols="60"
+            rows="15"
+          ></textarea>
+          <img
+            id="highquality"
+            src="assets/highquality.png"
+            alt="Encriptador de Texto"
+          />
+          <h2 id="aviso1">Nenhuma mensagem encontrada</h2>
+          <p id="aviso2">
+            Digite um texto que você deseja criptografar ou descriptografar
+          </p>
+        </div>
+        <div id="btnCop" class="botaoCopiar">
+          <button class="botaoCop" type="button">Copiar</button>
+        </div>
+      </div>
+
+      <div class="container3">
+        <div class="areaEncriptografar">
+          <label for="textoEncriptar" class="visualmente-oculto"
+            >Texto a ser criptografado</label
+          >
+          <textarea
+            id="textoEncriptar"
+            placeholder="Digite seu texto"
+            cols="60"
+            rows="15"
+          ></textarea>
+        </div>
+        <div class="mensagemAviso">
+          <img src="assets/aviso.png" alt="Ícone Mensagem de Aviso" />
+          <strong>Apenas letras minúsculas e sem acento.</strong>
+        </div>
+        <div class="botoesEncDesc">
+          <button id="botao1" class="botao1" type="button">Criptografar</button>
+          <button id="botao2" class="botao2" type="button">
+            Descriptografar
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <h2>Desenvolvido por: João Avakian</h2>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var textInput = document.querySelector("#textoEncriptar");
+        var outInput = document.querySelector("#textoDescriptar");
+        var image = document.querySelector("#highquality");
+
+        function criptografar() {
+          var texto = textInput.value;
+          var resultadoCripto = texto
+            .replace(/e/g, "enter")
+            .replace(/i/g, "imes")
+            .replace(/a/g, "ai")
+            .replace(/o/g, "ober")
+            .replace(/u/g, "ufat");
+
+          outInput.value = resultadoCripto;
+          document.getElementById("aviso1").style.display = "none";
+          document.getElementById("aviso2").style.display = "none";
+          image.classList.add("hidden");
+        }
+
+        function descriptografar() {
+          var texto = textInput.value;
+          var resultadoDescripto = texto
+            .replace(/enter/g, "e")
+            .replace(/imes/g, "i")
+            .replace(/ai/g, "a")
+            .replace(/ober/g, "o")
+            .replace(/ufat/g, "u");
+
+          outInput.value = resultadoDescripto;
+          document.getElementById("aviso1").style.display = "none";
+          document.getElementById("aviso2").style.display = "none";
+          image.classList.add("hidden");
+        }
+
+        function copiar() {
+          outInput.select();
+          document.execCommand("copy");
+          alert("Texto copiado para a área de transferência!");
+        }
+
+        outInput.addEventListener("input", function () {
+          if (outInput.value.trim() === "") {
+            image.classList.remove("hidden");
+          } else {
+            image.classList.add("hidden");
+          }
+        });
+
+        document
+          .querySelector("#botao1")
+          .addEventListener("click", criptografar);
+        document
+          .querySelector("#botao2")
+          .addEventListener("click", descriptografar);
+        document.querySelector(".botaoCop").addEventListener("click", copiar);
+      });
+    </script>
+  </body>
+</html>
